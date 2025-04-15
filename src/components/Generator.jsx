@@ -9,9 +9,9 @@ export function Generator() {
     
 
     return (
-        <div className="input-container">
+        <div className="generator">
             <form>
-                <h1>Genere una contraseña:</h1>
+                <h1 className="title">Genere una contraseña:</h1>
                 <div>
                     <label for="length">Longitud</label>
                     <input type="number" id="length" min="8" max="25"></input>

@@ -6,7 +6,6 @@ import "./styles/App.css"
 function App() {
   return (
     <>
-      <title>Contraseña</title>
       <Formulario></Formulario>
       <Generator></Generator>
     </>
