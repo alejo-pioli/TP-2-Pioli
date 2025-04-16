@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { use, useState } from "react";
 import { Notification } from "./Notification";
 import "../styles/App.css"
 
@@ -8,16 +8,30 @@ export function Formulario() {
         setVisible(!isVisible);
     }
 
+    let baseTime;
+    const percentages = ["p90", "p80", "p70", "p60", "p50", "p40", "p30", "p20", "p10", "p00"];
+    const [underlineWidth, setUnderlineWidth] = useState("p100");
     const [notificationIsVisible, setNotificationIsVisible] = useState(false)
     const copyToClipboard = () => {
         navigator.clipboard.writeText(document.getElementById("password-input").value)
         setNotificationIsVisible(true)
-        setTimeout(() => setNotificationIsVisible(false), 3000)
+
+        setUnderlineWidth("p100")
+        var highestTimeoutId = setTimeout(";");
+        for (var i = 0; i < highestTimeoutId; i++) {
+            clearTimeout(i);
+        }
+        baseTime = 0
+        for (let i = 0; i < percentages.length; i++) {
+            baseTime += 300;
+            setTimeout(() => setUnderlineWidth(percentages[i]), baseTime);
+        }
+        setTimeout(() => { setNotificationIsVisible(false); setUnderlineWidth("p100") }, 3000)
     }
 
     return (
         <div className="input-container">
-            <Notification visibility={notificationIsVisible}></Notification>
+            <Notification visibility={notificationIsVisible} width={underlineWidth}></Notification>
             <h1 className="title">Ingrese su contraseña:</h1>
             <div className="form-buttons">
                 <input type={!isVisible ? "password" : "text"} id="password-input"></input>

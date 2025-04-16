@@ -13,26 +13,26 @@ export function Generator() {
             <form>
                 <h1 className="title">Genere una contraseña:</h1>
                 <div>
-                    <label for="length">Longitud</label>
+                    <label className="not-selectable" for="length">Longitud</label>
                     <input type="number" id="length" min="8" max="25"></input>
                 </div>
                 <div>
-                    <input type="checkbox" id="lower"></input>
-                    <label for="lower">Incluir letras minúsculas</label>
+                    <input className="checkbox" type="checkbox" id="lower"></input>
+                    <label className="not-selectable" for="lower">Incluir letras minúsculas</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="upper"></input>
-                    <label for="upper">Incluir letras mayúsculas</label>
+                    <input className="checkbox" type="checkbox" id="upper"></input>
+                    <label className="not-selectable" for="upper">Incluir letras mayúsculas</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="num"></input>
-                    <label for="num">Incluir números</label>
+                    <input className="checkbox" type="checkbox" id="num"></input>
+                    <label className="not-selectable" for="num">Incluir números</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="special"></input>
-                    <label for="special ">Incluir caracteres especiales</label>
+                    <input className="checkbox" type="checkbox" id="special"></input>
+                    <label className="not-selectable" for="special">Incluir caracteres especiales</label>
                 </div>
-                <button type="submit" id="generar">Generar</button>
+                <button className="not-selectable" type="submit" id="generar">Generar</button>
             </form>
             <Password visibility={isVisible} pass={pass}></Password>
         </div>

@@ -12,6 +12,15 @@
   background-color: var(--color-primary);
 }
 
+.not-selectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 input {
   font-family: Montserrat, system-ui;
 }
@@ -65,7 +74,46 @@ button:hover {
   width: max-content;
 }
 .notification h1{
-  font-size: 1.5em;
+  font-size: 1.5em;margin-bottom: 0;
+}
+
+.underline {
+  height: 4px;
+  margin: 0;
+  background-color: var(--color-third);
+}
+.p100{
+  width: 100%;
+}
+.p90{
+  width: 90%;
+}
+.p80{
+  width: 80%;
+}
+.p70{
+  width: 70%;
+}
+.p60{
+  width: 60%;
+}
+.p50{
+  width: 50%;
+}
+.p40{
+  width: 40%;
+}
+.p30{
+  width: 30%;
+}
+.p20{
+  width: 20%;
+}
+.p10{
+  width: 10%;
+}
+.p00{
+  width: 0%;
 }
 
 .title {
@@ -76,11 +124,6 @@ button:hover {
 }
 
 .input-container {
-  margin-top: 2em;
-  padding: 1em;
-}
-
-.generator {
   margin-top: 2em;
   padding: 1em;
 }
@@ -122,6 +165,14 @@ button:hover {
   color: var(--color-third);
 }
 
+.generator {
+  margin-top: 2em;
+  padding: 1em;
+}
+
+.checkbox {
+  accent-color: var(--color-secondary);
+}
 
 @media (max-width:900px) {
   .input-container {
