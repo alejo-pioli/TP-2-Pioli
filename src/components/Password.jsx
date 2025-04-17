@@ -1,8 +1,13 @@
 import "../styles/App.css"
+import { Clipboard } from "./Clipboard"
 
-export function Password ( {visibility, pass} ) {
+export function Password({ visibility, pass }) {
+
     return (visibility ?
-        <h1>{pass}</h1>
+        <div>
+            <h1>{pass}</h1>
+            <Clipboard text={pass}></Clipboard>
+        </div>
         : null
     )
 }
