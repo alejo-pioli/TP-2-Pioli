@@ -60,7 +60,7 @@ export function Generator() {
 
     return (
         <div className="generator-container">
-            <h1 className="title">Genere una contraseña:</h1>
+            <h1 className="title" id="generator-title">Genere una contraseña:</h1>
             <form onSubmit={generate} className="generator">
                 <div>
                     <input className="checkbox" type="checkbox" id="lower" name="lower"></input>
@@ -79,8 +79,8 @@ export function Generator() {
                     <label className="not-selectable" for="special">Incluir caracteres especiales</label>
                 </div>
                 <div>
-                    <label className="not-selectable" for="length">Longitud</label>
-                    <input type="number" id="length" min="8" max="25" name="length" required></input>
+                    <label className="not-selectable" for="length" id="label-length">Longitud</label>
+                    <input type="number" id="length" min="8" max="23" name="length" required></input>
                 </div>
                 <button className="not-selectable" type="submit" id="generar">Generar</button> 
           </form>

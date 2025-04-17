@@ -7,6 +7,7 @@
   --color-primary: black;
   --color-secondary: #FAE4BB;
   --color-third: #E78625;
+  --color-transparent: rgba(0,0,0,0.6);
 
   color: var(--color-secondary);
   background-color: var(--color-primary);
@@ -38,8 +39,6 @@ a:hover {
 body {
   margin: auto;
   place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
 h1 {
@@ -50,7 +49,7 @@ h1 {
 }
 
 button {
-  border: 1px solid transparent;
+  border: 0;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 800;
@@ -59,6 +58,7 @@ button {
   color: var(--color-primary);
   cursor: pointer;
   transition: background-color 0.2s;
+  vertical-align: middle;
 }
 
 button:hover {
@@ -66,15 +66,20 @@ button:hover {
 }
 
 .notification {
-  position: absolute;
-  top: 5%;
+  position: fixed;
+  top: 3%;
   left: 50%;
   transform: translate(-50%, 0%);
   color: var(--color-third);
   width: max-content;
+  background-color: var(--color-transparent);
+  padding: 0.25em;
+  backdrop-filter: blur(1px);
 }
-.notification h1{
-  font-size: 1.5em;margin-bottom: 0;
+
+.notification h1 {
+  font-size: 1.5em;
+  margin-bottom: 0;
 }
 
 .underline {
@@ -82,45 +87,60 @@ button:hover {
   margin: 0;
   background-color: var(--color-third);
 }
-.p100{
+
+.p100 {
   width: 100%;
 }
-.p90{
+
+.p90 {
   width: 90%;
 }
-.p80{
+
+.p80 {
   width: 80%;
 }
-.p70{
+
+.p70 {
   width: 70%;
 }
-.p60{
+
+.p60 {
   width: 60%;
 }
-.p50{
+
+.p50 {
   width: 50%;
 }
-.p40{
+
+.p40 {
   width: 40%;
 }
-.p30{
+
+.p30 {
   width: 30%;
 }
-.p20{
+
+.p20 {
   width: 20%;
 }
-.p10{
+
+.p10 {
   width: 10%;
 }
-.p00{
+
+.p00 {
   width: 0%;
+}
+
+#copy, #toggle {
+  font-size: 0;
 }
 
 .title {
   width: fit-content;
   border-bottom: 4px solid var(--color-secondary);
   font-size: 3em;
-  margin: 1em 0 0.5em;
+  margin: 0.7em 0 0.5em;
 }
 
 .input-container {
@@ -180,14 +200,87 @@ button:hover {
   gap: 0.4rem;
 }
 
+.generator-container #length {
+  width: fit-content;
+  font-size: 1em;
+  width: 2.5em;
+  border: 2px solid var(--color-secondary);
+  margin-bottom: 1.5em;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  font-weight: 400;
+  margin: 0;
+  transition: font-weight 0.1s;
+}
+
+.generator-container #length:focus {
+  outline: none;
+  border: 2px solid var(--color-third);
+  font-weight: 500;
+}
+
+#generator-title {
+  margin-top: 0.3em;
+}
+
+#generar{
+  font-size: 1.3em;
+}
+
+#label-length {
+  padding-right: 0.4em;
+}
+
+#generated {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2.5em;
+  align-items: center;
+  column-gap: 1em;
+}
+
+#generated-pass {
+  color: var(--color-third);
+  margin: 0;
+  font-size: 2em;
+  word-break: break-all;
+  text-align: center;
+}
+
+#generated button {
+  padding: 0;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  transition: color 0.2s;
+}
+#generated button:hover{
+  color:var(--color-third);
+}
+
+.result {
+  margin: 0;
+}
+.result h2{ 
+  margin: 0;
+  margin-top: 1em;
+  text-align: center;
+}
+
 @media (max-width:900px) {
   .input-container {
-    margin-top: 2em;
+    margin-top: 1em;
+  }
+  .generator-container{
+    margin-top: 0.5em;
   }
 }
 
-@media (max-width:400px){
+@media (max-width:400px) {
   .notification {
+    width: fit-content;
+  }
+  .title {
     width: fit-content;
   }
 }
@@ -197,5 +290,6 @@ button:hover {
     --color-primary: white;
     --color-secondary: black;
     --color-third: #E78625;
+    --color-transparent: rgba(255,255,255,0.65);
   }
 }
