@@ -3,6 +3,9 @@
   line-height: 1.5;
   font-weight: 400;
 
+  margin: auto;
+  width: clamp(min(30rem, 100vw), 60vw, 100vw);
+
   color-scheme: light dark;
   --color-primary: black;
   --color-secondary: #FAE4BB;
