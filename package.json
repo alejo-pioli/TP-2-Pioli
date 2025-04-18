@@ -1,7 +1,7 @@
 {
   "homepage": "http://alejo-pioli.github.io/TP-2-Pioli",
   "name": "tp2",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
