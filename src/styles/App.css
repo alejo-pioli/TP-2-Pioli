@@ -13,6 +13,11 @@
   background-color: var(--color-primary);
 }
 
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+
 .not-selectable {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -263,8 +268,19 @@ button:hover {
 }
 .result h2{ 
   margin: 0;
-  margin-top: 1em;
+  margin-top: 0.5em;
   text-align: center;
+  font-size: 2em;
+  font-weight: 800;
+}
+.nsafe {
+  color: red;
+}
+.safe {
+  color: var(--color-third);
+}
+.vsafe {
+  color: green;
 }
 
 @media (max-width:900px) {
